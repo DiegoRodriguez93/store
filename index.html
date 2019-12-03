@@ -285,35 +285,32 @@
     $.each( data, function( i, val ) {
      
      var items = `
-          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 ">
+          <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 my-1">
 
             <div class="card">
 
-              <div class="view overlay">
-                <img src="uploads/`+val.pathimage+`" class="card-img-top"
+
+                <img src="uploads/`+val.pathimage+`" style="max-height:180px;" class="card-img-top"
                   alt="">
                 <a>
                   <div class="mask rgba-white-slight"></div>
                 </a>
-              </div>
-
-
 
               <div class="card-body text-center">
 
                 <a href="" class="grey-text">
-                  <h5>`+val.id_categoria+`</h5>
+                  <h5>`+val.categoria+`</h5>
                 </a>
                 <h5>
                   <strong>
                     <a href="" class="dark-grey-text">`+val.nombre+`
-                      <span class="badge badge-pill danger-color">Nuevo</span>
+                      <!-- <span class="badge badge-pill danger-color">Nuevo</span> -->
                     </a>
                   </strong>
                 </h5>
 
                 <h4 class="font-weight-bold blue-text">
-                  <strong>`+val.precio+`</strong>
+                  <strong>`+val.moneda+` `+val.precio+`</strong>
                 </h4>
 
               </div>

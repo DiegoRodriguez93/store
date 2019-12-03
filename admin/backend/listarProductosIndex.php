@@ -2,18 +2,21 @@
 
 require '_conexion.php';
 
-$select = mysqli_query($mysqli,"SELECT * FROM productos limit 8");
+$select = mysqli_query($mysqli,"SELECT * FROM productos as p
+ LEFT JOIN categorias as c ON p.id_categoria = c.id  
+ LEFT JOIN monedas as m ON p.id_moneda = m.id
+LIMIT 8");
 
 while($row = mysqli_fetch_array($select)){
 
 $nombre         = $row['nombre'];
-$id_categoria   = $row['id_categoria'];
+$categoria      = $row['categoria'];
 $descripcion    = $row['descripcion'];
-$id_moneda      = $row['id_moneda'];
+$moneda         = $row['moneda'];
 $precio         = $row['precio'];
 $pathimage      = $row['pathimage'];
 
-$response[] = array('nombre'=>$nombre,'id_categoria'=>$id_categoria,'descripcion'=>$descripcion,'id_moneda'=>$id_moneda,
+$response[] = array('nombre'=>$nombre,'categoria'=>$categoria,'descripcion'=>$descripcion,'moneda'=>$moneda,
 'precio'=>$precio,'pathimage'=>$pathimage);
 
 }

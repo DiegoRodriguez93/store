@@ -25,15 +25,15 @@ $(document).ready(function(){
 $("#fileToUpload").change(function() {
     var file = this.files[0];
     var imagefile = file.type;
-    var match= ["image/jpeg","image/png","image/jpg"];
+    var match= ["image/jpeg","image/png","image/jpg","image/webp","image/gif"];
 
-    if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
-        alert('Por favor seleccione un formato de imagen válido (JPEG/JPG/PNG).');
+    if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]) || (imagefile==match[3]) || (imagefile==match[4]) )){
+        alert('Por favor seleccione un formato de imagen válido (JPEG/JPG/PNG/GIF/WEBP).');
         $("#fileToUpload").val('');
         return false;
     }
 
-    if(this.files[0].size > 307200){
+    if(this.files[0].size > 614400){
         alert("El archivo es demasiado grande!");
         $("#fileToUpload").val('');
         return false;
@@ -79,10 +79,16 @@ $.ajax({
     contentType: false,
     success: function(res){
 
-        if(res.result){
+       var response = JSON.parse(res);
+
+        if(response.result){
+            alert(response.message);
             $('#form_producto').trigger('reset');
+            $('#fileToUpload').attr('class','form-control');
+            $('#precio').attr('class','form-control');
+            $('#nombre').attr('class','form-control');
         }else{
-            alert(res.message);
+            alert(response.message);
         }
 
 
