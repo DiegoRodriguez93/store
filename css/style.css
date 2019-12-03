@@ -48,3 +48,22 @@ body,
       height: 100vh;
     }
   }
+
+  
+  @media (min-width: 1040px) {
+  
+    .card{
+     height: 435px;
+    }
+
+  }
+
+  @media (min-width: 768px) {
+  
+    .card{
+     height: 520px;
+    }
+
+  }
+
+
