@@ -1,5 +1,8 @@
 const tablec = $('#TableC').DataTable({
-    ajax: 'backend/categorias_datatable.php'
+    ajax: 'backend/categorias_datatable.php',
+    "language": {
+        "url": "json/spanish .json"
+    }
 });
 
 

@@ -22,6 +22,28 @@ $(document).ready(function(){
         
         });
 
+        /* RELLENAR MONEDAS */
+
+        $.ajax({
+            type: "GET",
+            url: "backend/listarMonedas.php",
+            dataType: "JSON",
+            success: function(datos){
+                $('#monedas_select').empty()
+                $.each(datos, function(i, datos){
+                    
+                    var opt = "<option value='"+datos.id+"'><b>"+datos.moneda+"</option>";
+    
+                    $(opt).appendTo("#monedas_select");
+                    
+                });   
+             } ,error:function(){
+                $('#monedas_select').empty();
+                $("<option>No se ha podido cargar las monedas en este momento</option>").appendTo("#monedas_select");
+             }
+            
+            });
+
 $("#fileToUpload").change(function() {
     var file = this.files[0];
     var imagefile = file.type;
