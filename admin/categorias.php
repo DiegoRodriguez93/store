@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
   <title>Admin Panel</title>
 </head>
 
@@ -22,7 +23,7 @@
       <div class="col-lg-10 sm-12">
         <div class="row">
           <div class="col-lg-4 sm-12"></div>
-          <div class="col-lg-4 sm-12">
+          <div class="col-lg-4 sm-12 mt-4">
             <form id="form_categorias">
               <div class="text-center">
                 <h5>Ingresar nueva categoría</h5>

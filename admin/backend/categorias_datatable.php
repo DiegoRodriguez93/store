@@ -14,8 +14,8 @@ if($count_rows > 0){
         $id = $row['id'];
         $categoria = $row['categoria'];
     
-        $btn_editar     = '<button onclick="editarCategoria('.$id.',`'.$categoria.'`)">Editar</button>'; 
-        $btn_eliminar   = "<button onclick='eliminarCategoria(".$id.")'>Eliminar"."</button>";
+        $btn_editar     = '<button class="btn btn-primary" onclick="editarCategoria('.$id.',`'.$categoria.'`)"><i class="fas fa-pen "></i></button>'; 
+        $btn_eliminar   = "<button class='btn btn-danger' onclick='eliminarCategoria(".$id.")'><i class='fas fa-trash'></i>"."</button>";
     
         $response[] = array($btn_editar, $categoria, $btn_eliminar);
     }

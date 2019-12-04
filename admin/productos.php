@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
     <title>Admin Panel</title>
 </head>
@@ -38,9 +39,7 @@
 <div class="row">
     <div class="col-4">
         <label for="">Moneda</label>
-      <select class="form-control" name="moneda" id="moneda">
-          <option value="1">$</option>
-          <option value="2">U$S</option>
+      <select class="form-control" name="moneda" id="monedas_select">
       </select>
     </div>
     <div class="col-8 ">

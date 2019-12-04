@@ -26,7 +26,7 @@ if (file_exists($target_file)) {
     die(json_encode($response));
 }
 
-if ($_FILES["fileToUpload"]["size"] > 307200) {
+if ($_FILES["fileToUpload"]["size"] > 614400) {
     // el arcivo es muy pesado
     $uploadOk = 0;
     $response = array('result'=>false,'message'=>'El archivo es muy pesado');
@@ -34,7 +34,7 @@ if ($_FILES["fileToUpload"]["size"] > 307200) {
 }
 
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+&& $imageFileType != "gif" && $imageFileType != "webp") {
     //Formatos de imagen permitidos
     $uploadOk = 0;
     $response = array('result'=>false,'message'=>'Formato de imagén no permitido');
@@ -70,7 +70,7 @@ VALUES ('$nombre', '$id_categoria', '$descripcion', '$id_moneda', '$precio', '$i
 
 if($insert){
     
-    $response = array('result'=>true);
+    $response = array('result'=>true,'message'=>'Se ha ingresado un nuevo producto correctamente');
     die(json_encode($response));
 
 }else{
